@@ -2,9 +2,9 @@ import { createApp } from 'vue'
 import './style.css'
 import App from './App.vue'
 import router from './router'
-import 'virtual:svg-icons-register'
+import svgicon from '$components/SvgIcons/index.vue'
 
 const app = createApp(App)
-
+app.component('svgicon', svgicon)
 app.use(router)
 app.mount('#app')
