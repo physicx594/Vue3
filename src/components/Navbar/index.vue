@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import logoUrl from "$assets/logo.png";
 import type { IList } from "$components/types";
-import user from '$assets/icons/user.svg'
+
 const list: IList[] = [
   {
     title: "首頁",
@@ -13,23 +13,26 @@ const list: IList[] = [
     title: "關於我們",
   },
   {
+    type: "svg",
     title: "user",
   },
   {
-    title: "Cart",
+    type: "svg",
+    title: "shoppingCart",
   },
 ];
 </script>
 <template>
-  <div class="im-bg flex justify-between items-center bg-white shadow-md px-12 py-2">
-    <user class="fill-current" width="500" height="500" color="#BBB"/>
+  <div
+    class="im-bg flex justify-between items-center bg-white shadow-md px-12 py-2"
+  >
     <div>
       <img :src="logoUrl" alt="logo" width="60" />
-      <svgicon name="user" width="20" color="#ZZZ"/>
     </div>
-    <div class="flex space-x-8">
+    <div class="flex items-center space-x-8">
       <div v-for="item in list" class="select-none text-hdprimary">
-        <div>{{ item.title }}</div>
+        <svgicon v-if="item.type" :name="item.title" width="18" height="18" />
+        <div v-else>{{ item.title }}</div>
       </div>
     </div>
   </div>

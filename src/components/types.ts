@@ -1,3 +1,4 @@
 export interface IList {
-    title?: string
+    title: string
+    type?: string
 }
