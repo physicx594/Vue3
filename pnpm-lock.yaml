@@ -8,6 +8,9 @@ dependencies:
   '@types/node':
     specifier: ^20.5.1
     version: 20.5.1
+  tailwind-merge:
+    specifier: ^1.14.0
+    version: 1.14.0
   vite-svg-loader:
     specifier: ^4.0.0
     version: 4.0.0
@@ -2101,6 +2104,10 @@ packages:
       css-tree: 2.3.1
       csso: 5.0.5
       picocolors: 1.0.0
+    dev: false
+
+  /tailwind-merge@1.14.0:
+    resolution: {integrity: sha512-3mFKyCo/MBcgyOTlrY8T7odzZFx+w+qKSMAmdFzRvqBfLlSigU6TZnlFHK0lkMwj9Bj8OYU+9yW9lmGuS0QEnQ==}
     dev: false
 
   /tailwindcss@3.3.3:
