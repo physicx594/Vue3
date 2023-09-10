@@ -46,6 +46,7 @@ const handleClick = (item: IList) => {
 
 <template>
   <div
+    data-cid="Navbar"
     class="im-bg flex justify-between items-center bg-white shadow-md px-12 py-2"
   >
     <div>
