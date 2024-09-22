@@ -1,24 +1,40 @@
 <script setup lang="ts">
-const list = [
-  { id: 0, name: '首頁' },
-  { id: 1, name: '產品列表' },
-  { id: 2, name: '關於我們' }
-]
+import { navigationList, type NavigationItem } from '@/constants/header-constants'
+
+import logoIcon from '@/assets/header/logo.png'
+import Picture from '@/components/Picture/index.vue'
+import router from '@/router'
+
+const handleClick = (item: NavigationItem) => {
+  router.push(item.path)
+}
 </script>
 
 <template>
-  <div data-cid="Header" class="w-full shadow">
-    <div class="w-full max-w-screen-xxl flex justify-between mx-auto p-5">
-      <div id="logo" class="border border-red-100">logo</div>
-      <div>
-        <ul class="flex">
-          <li v-for="item in list" :key="item.id">
-            {{ item.name }}
-          </li>
-        </ul>
-      </div>
-      1
+  <div
+    data-cid="Header"
+    class="w-full h-16 shadow max-w-screen-xxl flex justify-between items-center px-5"
+  >
+    <div class="w-15 cursor-pointer">
+      <RouterLink to="/">
+        <Picture :src="logoIcon" />
+      </RouterLink>
     </div>
+    <ul class="flex items-center space-x-4">
+      <li
+        v-for="item in navigationList"
+        :key="item.id"
+        @click="handleClick(item)"
+        class="cursor-pointer"
+      >
+        <span v-if="item.name">
+          {{ item.name }}
+        </span>
+        <div v-if="item.icon" class="w-5 h-5">
+          <Picture :src="item.icon" />
+        </div>
+      </li>
+    </ul>
   </div>
 </template>
 
