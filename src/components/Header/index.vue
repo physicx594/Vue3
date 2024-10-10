@@ -13,7 +13,7 @@ const handleClick = (item: NavigationItem) => {
 <template>
   <div
     data-cid="Header"
-    class="w-full h-16 shadow max-w-screen-xxl flex justify-between items-center px-5"
+    class="w-full h-16 shadow flex justify-between items-center px-5 bg-white fixed"
   >
     <div class="w-15 cursor-pointer">
       <RouterLink to="/">
